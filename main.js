@@ -1,52 +1,17 @@
-let result = 0
-
-function sum(x, y) {
-    return x + y
-}
-
-function substract(x, y) {
-    return x - y
-}
-
-function multiply(x, y) {
-    return x * y
-}
-
-function divide(x, y) {
-    if (y !== 0) {
-        return x / y
-    } else {
-        console.log("Write another num")
-        return null
+function Books(title, author, pages, hasRead) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.hasRead = this.hasRead;
+    this.result = function() {
+        return `${title} by ${author}, ${pages} pages, ${hasRead}`
     }
 }
 
-console.log("Calculator menu");
-console.log("1. Addition");
-console.log("2. Substraction");
-console.log("3. Multiply");
-console.log("4. Divide");
+let reader1 = new Books('When Nices wept', 'Irvin Yalom', 360, 'still reading')
+let reader2 = new Books('Rich Dad Poor Dad', 'Richard Kioysake', 350, 'have read')
+let reader3 = new Books('How to win in any deal', 'Adam Grant', 300, 'have not read')
 
-let choice = prompt("Write calculator choice", "1, 2, 3, 4")
-
-if (['1', '2', '3', '4'].includes(choice)) {
-    let num1 = parseFloat(prompt("Write num 1"));
-    let num2 = parseFloat(prompt("Write num 2"));
-
-    let result 
-    if (choice === '1') {
-        result = sum(num1, num2)
-    } else if (choice === '2') {
-        result = substract(num1, num2)
-    } else if (choice === '3') {
-        result = multiply(num1, num2)
-    } else if (choice === '4') {
-        result = divide(num1, num2)
-    } 
-
-    if (result !== null) {
-        alert(`Result: ${result}`)
-    } else {
-        alert('Invalid Choice. Please enter a number between 1 - 4')
-    }
-}
+console.log(reader1.result())
+console.log(reader2.result())
+console.log(reader3.result())
